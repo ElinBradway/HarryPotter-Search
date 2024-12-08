@@ -5,12 +5,12 @@ import './hero.css';
 import { HeroImage } from "../assets/images.js";
 
 const Hero = () => {
-  const [items, setItems] = useState([]); // Full data from API
-  const [filteredItems, setFilteredItems] = useState([]); // Filtered data for display
-  const [searchTerm, setSearchTerm] = useState(""); // Search input
-  const [error, setError] = useState(null); // Error state
-  const [loading, setLoading] = useState(true); // Loading state
-  const [searched, setSearched] = useState(false); // Tracks if a search has been conducted
+  const [items, setItems] = useState([]); 
+  const [filteredItems, setFilteredItems] = useState([]); 
+  const [searchTerm, setSearchTerm] = useState(""); 
+  const [error, setError] = useState(null); 
+  const [loading, setLoading] = useState(true); 
+  const [searched, setSearched] = useState(false); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,15 +29,15 @@ const Hero = () => {
     fetchData();
   }, []);
 
-  // Handle Search
+
   const handleSearch = () => {
-    setSearched(true); // Mark that a search has been performed
+    setSearched(true);
 
     const results = items.filter((item) =>
       item.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    setFilteredItems(results); // Update filtered list
+    setFilteredItems(results); 
   };
 
   return (
